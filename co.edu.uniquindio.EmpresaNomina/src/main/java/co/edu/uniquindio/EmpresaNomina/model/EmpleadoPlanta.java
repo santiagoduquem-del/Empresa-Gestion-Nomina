@@ -1,4 +1,4 @@
 package co.edu.uniquindio.EmpresaNomina.model;
 
-public class EmpleadoPlanta {
+public class EmpleadoPlanta extends Empleado {
 }
