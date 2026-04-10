@@ -38,4 +38,13 @@ public class Empresa {
     public void setListEmpleado(List<Empleado> listEmpleado) {
         this.listEmpleado = listEmpleado;
     }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "nombre='" + nombre + '\'' +
+                ", nit=" + nit +
+                ", listEmpleado=" + listEmpleado +
+                '}';
+    }
 }
