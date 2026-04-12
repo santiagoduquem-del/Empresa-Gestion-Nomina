@@ -11,16 +11,16 @@ public record ResumenPago (String documento,
         public String toString() {
             return String.format(
                     """
-                    ╔══════════════════════════════════════╗
+                  
                       RESUMEN DE PAGO
-                    ══════════════════════════════════════
+                   
                       Documento    : %s
                       Nombre       : %s
                       Tipo         : %s
                       Salario bruto: $%,.2f
                       Descuentos   : $%,.2f
                       Salario neto : $%,.2f
-                    ╚══════════════════════════════════════╝
+                   
                     """,
                     documento, nombre, tipoEmpleado,
                     salarioBruto, descuentos, salarioNeto

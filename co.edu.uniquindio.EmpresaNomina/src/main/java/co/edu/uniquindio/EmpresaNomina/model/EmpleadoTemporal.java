@@ -1,24 +1,44 @@
 package co.edu.uniquindio.EmpresaNomina.model;
 
+import co.edu.uniquindio.EmpresaNomina.exception.diasTrabajadosInvalidosException;
+import co.edu.uniquindio.EmpresaNomina.exception.valorDiaInvalidoException;
+
 public class EmpleadoTemporal extends Empleado {
 
     private int diasTrabajo;
     private float valorDia;
 
-EmpleadoTemporal(String nombre, String documento, int edad, float salarioBase, Categoria categoria,
-                 float descuentoSalud, float descuentoPension, int diasTrabajo, float valorHora)
+    public EmpleadoTemporal(String nombre, String documento, int edad, float salarioBase, Categoria categoria,
+                     float descuentoSalud, float descuentoPension, int diasTrabajo, float valorDia)
+    {
+        super(nombre, documento, edad, salarioBase, categoria, descuentoSalud, descuentoPension);
+        
+        if (diasTrabajo < 0) {
+            throw new diasTrabajadosInvalidosException("Los días trabajados no pueden ser negativos");
+        }
+        if (valorDia < 0) {
+            throw new valorDiaInvalidoException("El valor del día no puede ser negativo");
+        }
+        
+        this.diasTrabajo = diasTrabajo;
+        this.valorDia = valorDia;
+    }
 
-{super(nombre, documento, edad, salarioBase, categoria, descuentoSalud, descuentoPension);
+    /**
+     * metodo calcularSalarioBruto
+     * @return
+     */
+    @Override
+    public float calcularSalarioBruto() {
+        return (diasTrabajo * valorDia) + calcularBonificacionCategoria();
+    }
 
-    this.diasTrabajo= diasTrabajo;
-    this.valorDia = valorDia;
-}
-
+    /**
+     * metodo toString
+     * @return
+     */
     @Override
     public String toString() {
-        return "EmpleadoTemporal{" +
-                "diasTrabajo=" + diasTrabajo +
-                ", valorDia=" + valorDia +
-                '}';
+        return super.toString() + " EmpleadoTemporal{" + "diasTrabajo=" + diasTrabajo + "}";
     }
 }
