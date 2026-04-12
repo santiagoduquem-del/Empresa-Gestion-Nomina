@@ -80,7 +80,7 @@ public class App {
             System.out.print("Total Ventas: "); float ventas = Float.parseFloat(scanner.nextLine());
             System.out.print("% Comisión: "); float comision = Float.parseFloat(scanner.nextLine());
 
-            miEmpresa.agregarEmpleado(new EmpleadoVentas(nombre, doc, edad, salario, cat, salud, pension, ventas, comision));
+            miEmpresa.agregarEmpleado(new EmpleadoVenta(nombre, doc, edad, salario, cat, salud, pension, ventas, comision));
             System.out.println("Empleado de ventas agregado con éxito.");
         } catch (Exception e) {
             System.out.println("Error al agregar: " + e.getMessage());
