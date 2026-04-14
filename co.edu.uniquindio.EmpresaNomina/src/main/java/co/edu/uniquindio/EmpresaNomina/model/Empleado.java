@@ -4,6 +4,7 @@ import co.edu.uniquindio.EmpresaNomina.exception.salarioNegativoException;
 
 public abstract class Empleado {
 
+
     protected String nombre;
     protected String documento;
     protected int edad;
