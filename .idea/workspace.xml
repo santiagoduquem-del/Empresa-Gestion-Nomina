@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0500265-42f2-4591-b5d2-d268eaff550e" name="Changes" comment="" />
+    <list default="true" id="f0500265-42f2-4591-b5d2-d268eaff550e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoPlanta.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoPlanta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoTemporal.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoTemporal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empresa.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,12 +32,12 @@
     &quot;assignee&quot;: &quot;Albert-Caste&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/santiagoduquem-del/Empresa-Gestion-Nomina.git&quot;,
-    &quot;accountId&quot;: &quot;e56b6f97-8576-4b14-b4ab-4e2bb9e5ec2c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/santiagoduquem-del/Empresa-Gestion-Nomina.git",
+    "accountId": "4b709f3b-580c-4e2a-8f28-b2c6d53ab5cb"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -45,6 +53,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -53,24 +62,41 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "a4561db4",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/saly/Programacion1/EjercicioNomina/Empresa-Gestion-Nomina",
-    "to.speed.mode.migration.done": "true"
+    "last_opened_file_path": "C:/Users/COMFENALCO/Documents/Comfenalco/OneDrive/Ing/EjercicioNominaEmpresa/Empresa-Gestion-Nomina",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Empresa-Gestion-Nomina" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.EmpresaNomina.App" />
+      <module name="co.edu.uniquindio.EmpresaNomina" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.EmpresaNomina.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Empresa-Gestion-Nomina" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,6 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776020326342</updated>
+      <workItem from="1776186943129" duration="8401000" />
     </task>
     <servers />
   </component>

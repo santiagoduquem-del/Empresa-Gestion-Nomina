@@ -3,6 +3,8 @@ package co.edu.uniquindio.EmpresaNomina.model;
 import co.edu.uniquindio.EmpresaNomina.exception.diasTrabajadosInvalidosException;
 import co.edu.uniquindio.EmpresaNomina.exception.valorDiaInvalidoException;
 
+import javax.swing.*;
+
 public class EmpleadoTemporal extends Empleado {
 
     private int diasTrabajo;
@@ -40,5 +42,10 @@ public class EmpleadoTemporal extends Empleado {
     @Override
     public String toString() {
         return super.toString() + " EmpleadoTemporal{" + "diasTrabajo=" + diasTrabajo + "}";
+    }
+
+    @Override
+    public void setHorasExtra(int valor) {
+        JOptionPane.showMessageDialog(null, "No pueda asignar horas extras");
     }
 }

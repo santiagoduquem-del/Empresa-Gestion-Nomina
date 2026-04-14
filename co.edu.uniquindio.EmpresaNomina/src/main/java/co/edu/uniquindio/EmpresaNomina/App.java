@@ -33,28 +33,28 @@ public class App {
         String menu = "-----Menu Gestion De Nomina------ \n" +
                 "Marque alguna de estas opciones \n" +
                 "  \n" +
-                "  " +
+                " \n " +
                 "1. Ingresar Cambios \n" +
-                "2. Crear grupo \n" +
-                "3. Registrar Contacto\n" +
-                "4. Crear Reunion \n" +
-                "5 \n" +
+                "2. Crear Empleado \n" +
+                "3. Ver lista de empleados\n" +
+                "4. Ver nomina parcial empleado \n" +
+                "5  Generar Nomina empresa \n" +
                 "\n" +
                 "\n" +
-                "8. Salir de la agenda\n";
+                "8. Salir\n";
 
         String menuModificar = "-----Menu Modificar------ \n" +
                 "Marque alguna de estas opciones \n" +
                 "  \n" +
                 "  " +
                 "1. Ingresar horas extra\n" +
-                "2. Modificar Descuento\n" +
-                "3. Buscar contactos del mismo nombre \n" +
+                "2. Modificar Descuentos\n" +
+                "3. Modificar horas de trabajo \n" +
                 "4. Buscar y mostra GrupoContacto  \n" +
-                "5 \n" +
+                "5. Modificar comisión\n" +
                 "\n" +
                 "\n" +
-                "7. Salir de la agenda\n";
+                "7. Salir\n";
 
 
         int opcion = 0;
@@ -100,6 +100,13 @@ public class App {
                     }
                     switch (opcionBuscar){
                         case 1 : {
+
+                            Empleado emp1 = miEmpresa.buscarEmpleado(JOptionPane.showInputDialog("Ingrese Documento: "));
+                            int newHoraExtra = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas extra"));
+                            JOptionPane.showMessageDialog(null, emp1.mostrarInformacion());
+
+
+
                             continue;
                         }
                         case 2 : {
@@ -107,8 +114,8 @@ public class App {
 
                         }
 
-                        case 3 : {
-                            continue;
+
+                        case 3 : {continue;
 
                         }
 
@@ -132,8 +139,18 @@ public class App {
                     continue;
                 }
 
-                case 3 : {
+                case 3 : { JOptionPane.showMessageDialog(null, miEmpresa.mostrarTodosLosEmpleados());
+
                     continue;
+                }
+
+                case 4 : {
+                    Empleado emp1 = miEmpresa.buscarEmpleado(JOptionPane.showInputDialog("Ingrese Documento del empleado: "));
+                    JOptionPane.showMessageDialog(null, emp1.mostrarInformacion());
+                    continue;
+                }
+                case 5 : {
+                    JOptionPane.showMessageDialog(null, miEmpresa.mostrarInformacion());
                 }
 
                 case  8 : break;

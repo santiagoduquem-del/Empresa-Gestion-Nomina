@@ -124,38 +124,49 @@ public class Empresa {
      * metodo mostrarTodosLosEmpleados
      */
 
-    public void mostrarTodosLosEmpleados() {
+    public String mostrarTodosLosEmpleados() {
+        String lista = "";
         System.out.println("--- LISTA DE EMPLEADOS ---");
         for (Empleado emp : listEmpleado) {
-            System.out.println(emp.toString());
+            lista += emp.toString() + "\n";
         }
+        return lista;
     }
 
 
     /**
      * metodo mostrarResumenesPago
      */
-    public void mostrarResumenesPago() {
-        System.out.println("--- RESÚMENES DE PAGO GENERADOS ---");
+    public String mostrarResumenesPago() {
+        String resumenPago= "--- RESÚMENES DE PAGO GENERADOS ---";
         for (ResumenPago resumen : generarResumenesPago()) {
-            System.out.println(resumen.toString());
+            resumenPago += resumen.toString();
         }
+
+        return resumenPago;
     }
 
 
     /**
      * metodo mostrarInformacion
      */
-    public void mostrarInformacion() {
-        System.out.println(" EMPRESA: " + nombre + " (NIT: " + nit + ") ");
-        mostrarResumenesPago();
-        System.out.println(" NÓMINA TOTAL DE LA EMPRESA: $" + calcularNominaTotal());
+    public String mostrarInformacion() {
+        String infEmpresa = "";
+
+        infEmpresa =  " EMPRESA: " + nombre + " (NIT: " + nit + ") " + "\n" +
+                mostrarResumenesPago()+ "\n" +
+                " NÓMINA TOTAL DE LA EMPRESA: $" + calcularNominaTotal()+ "\n";
+
+
         
         Empleado mayor = obtenerEmpleadoMayorSalario();
         if (mayor != null) {
-            System.out.println(" EMPLEADO CON MAYOR SALARIO: " + mayor.getNombre() + " $" + mayor.calcularSalarioNeto() + "");
+            infEmpresa+=" EMPLEADO CON MAYOR SALARIO: " + mayor.getNombre() + " $" + mayor.calcularSalarioNeto() + "\n";
         }
-        System.out.println("-----------------");
+        infEmpresa += "-----------------";
+
+        return infEmpresa;
+
     }
 
 

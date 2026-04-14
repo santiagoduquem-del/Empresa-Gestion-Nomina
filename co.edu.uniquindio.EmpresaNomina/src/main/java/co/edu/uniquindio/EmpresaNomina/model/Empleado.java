@@ -142,14 +142,23 @@ public abstract class Empleado {
      * metodo mostrarInformacion
      */
 
-    public void mostrarInformacion() {
-        System.out.println("Empleado: " + nombre + " (" + categoria + ")");
-        System.out.println(" > Salario Bruto: " + calcularSalarioBruto());
-        System.out.println(" > (-) Descuentos: " + calcularDescuentos());
-        System.out.println(" > (=) Salario Neto: " + calcularSalarioNeto());
+    public String mostrarInformacion() {
+        String pagoParcial = "Empleado: " + nombre + " (" + categoria + ")" + "\n" +
+                " > Salario Bruto: " + calcularSalarioBruto() + "\n" +
+                " > (-) Descuentos: " + calcularDescuentos() + "\n" +
+                " > (=) Salario Neto: " + calcularSalarioNeto();
+
+        return pagoParcial;
     }
 
+
+
+
+
     @Override
+
+    public abstract void setHorasExtra(int valor);
+
     public String toString() {
         return "Empleado{" +
                 "nombre='" + nombre + '\'' +

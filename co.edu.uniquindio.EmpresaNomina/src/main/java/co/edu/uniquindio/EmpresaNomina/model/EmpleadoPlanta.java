@@ -43,4 +43,11 @@ public class EmpleadoPlanta extends Empleado {
     public String toString() {
         return super.toString() + " EmpleadoPlanta{" + "cargo='" + cargo + "'}";
     }
+
+//Getters and setters
+
+    @Override
+    public void setHorasExtra(int valor) {
+        this.horaExtra = valor;
+    }
 }
