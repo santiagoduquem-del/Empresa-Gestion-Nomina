@@ -3,6 +3,8 @@ package co.edu.uniquindio.EmpresaNomina.model;
 import co.edu.uniquindio.EmpresaNomina.exception.horasExtrasNegativasException;
 import co.edu.uniquindio.EmpresaNomina.exception.valorHoraExtraInvalidoException;
 
+import javax.swing.*;
+
 public class EmpleadoPlanta extends Empleado {
 
     private String cargo;
@@ -46,8 +48,19 @@ public class EmpleadoPlanta extends Empleado {
 
 //Getters and setters
 
+
     @Override
-    public void setHorasExtra(int valor) {
-        this.horaExtra = valor;
+    public void setHorasExtra(int horaExtra) {
+        this.horaExtra = horaExtra;
+        JOptionPane.showMessageDialog(null,nombre +"Horas extra "  +horaExtra+" horas extras" );
+    }
+    @Override
+    public void setporcentajeComision(int porcentajeComision) {
+        JOptionPane.showMessageDialog(null,nombre + " Es empleado de planta no recibe comisión " );
+    }
+
+    @Override
+    public void setDiasTrabajo(int diasTrabajo) {
+        JOptionPane.showMessageDialog(null,nombre + " Es empleado de planta no aplica trabajo por días  " );
     }
 }

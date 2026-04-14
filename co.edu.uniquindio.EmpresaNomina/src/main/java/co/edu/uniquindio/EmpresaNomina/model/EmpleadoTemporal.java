@@ -44,8 +44,22 @@ public class EmpleadoTemporal extends Empleado {
         return super.toString() + " EmpleadoTemporal{" + "diasTrabajo=" + diasTrabajo + "}";
     }
 
+    //get y set
+
     @Override
-    public void setHorasExtra(int valor) {
-        JOptionPane.showMessageDialog(null, "No pueda asignar horas extras");
+    public void setHorasExtra(int horaExtra) {
+        JOptionPane.showMessageDialog(null, "Es empleado Temporal, no se pueda asignar "+ horaExtra +"horas extras");
     }
+    @Override
+    public void setporcentajeComision(int porcentajeComision) {
+        JOptionPane.showMessageDialog(null,nombre + " Es empleado Temporal no recibe comisión " );
+    }
+
+    @Override
+    public void setDiasTrabajo(int diasTrabajo) {
+        this.diasTrabajo = diasTrabajo;
+        JOptionPane.showMessageDialog(null,nombre + " Días de trabajo " +  diasTrabajo );
+    }
+
+
 }

@@ -156,10 +156,15 @@ public abstract class Empleado {
 
 
 
+
+
+    public abstract void setHorasExtra(int horaExtra);
+    public abstract void setporcentajeComision(int horaExtra);
+    public abstract void setDiasTrabajo(int horaExtra);
+
+
+
     @Override
-
-    public abstract void setHorasExtra(int valor);
-
     public String toString() {
         return "Empleado{" +
                 "nombre='" + nombre + '\'' +

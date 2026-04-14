@@ -33,7 +33,7 @@ public class App {
         String menu = "-----Menu Gestion De Nomina------ \n" +
                 "Marque alguna de estas opciones \n" +
                 "  \n" +
-                " \n " +
+                " \n" +
                 "1. Ingresar Cambios \n" +
                 "2. Crear Empleado \n" +
                 "3. Ver lista de empleados\n" +
@@ -46,12 +46,12 @@ public class App {
         String menuModificar = "-----Menu Modificar------ \n" +
                 "Marque alguna de estas opciones \n" +
                 "  \n" +
-                "  " +
+                "  \n" +
                 "1. Ingresar horas extra\n" +
-                "2. Modificar Descuentos\n" +
-                "3. Modificar horas de trabajo \n" +
-                "4. Buscar y mostra GrupoContacto  \n" +
-                "5. Modificar comisión\n" +
+                "2. Modificar comisión\n" +
+                "3. Modificar dias de trabajo \n" +
+                "4.  \n" +
+                "5. \n" +
                 "\n" +
                 "\n" +
                 "7. Salir\n";
@@ -103,19 +103,24 @@ public class App {
 
                             Empleado emp1 = miEmpresa.buscarEmpleado(JOptionPane.showInputDialog("Ingrese Documento: "));
                             int newHoraExtra = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas extra"));
-                            JOptionPane.showMessageDialog(null, emp1.mostrarInformacion());
-
-
-
+                            emp1.setHorasExtra(newHoraExtra);
                             continue;
                         }
                         case 2 : {
+                            Empleado emp1 = miEmpresa.buscarEmpleado(JOptionPane.showInputDialog("Ingrese Documento: "));
+                            int newPorcentaje = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas extra"));
+                            emp1.setporcentajeComision(newPorcentaje);
+
                             continue;
 
                         }
 
 
-                        case 3 : {continue;
+                        case 3 : {
+                            Empleado emp1 = miEmpresa.buscarEmpleado(JOptionPane.showInputDialog("Ingrese Documento: "));
+                            int newDias = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de horas extra"));
+                            emp1.setDiasTrabajo(newDias);
+                            continue;
 
                         }
 
@@ -135,7 +140,7 @@ public class App {
 
                 }
 
-                case 2 : {
+                case 2 : { JOptionPane.showMessageDialog(null, "Profe :( ya tenemos el metodos solo nos falta invocarlo e ingresar los atributos :)");
                     continue;
                 }
 
@@ -151,11 +156,13 @@ public class App {
                 }
                 case 5 : {
                     JOptionPane.showMessageDialog(null, miEmpresa.mostrarInformacion());
+                    continue;
                 }
 
                 case  8 : break;
 
-                default: break;
+                default: JOptionPane.showMessageDialog(null,"No marcó una opción valida");
+                    continue;
 
             }
             break;

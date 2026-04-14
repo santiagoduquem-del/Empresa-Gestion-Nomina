@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0500265-42f2-4591-b5d2-d268eaff550e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoPlanta.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoPlanta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoTemporal.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/EmpleadoTemporal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/src/main/java/co/edu/uniquindio/EmpresaNomina/model/Empresa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/santiagoduquem-del/Empresa-Gestion-Nomina.git",
-    "accountId": "4b709f3b-580c-4e2a-8f28-b2c6d53ab5cb"
+    "accountId": "e56b6f97-8576-4b14-b4ab-4e2bb9e5ec2c"
   }
 }]]></component>
   <component name="McpProjectServerCommands">
@@ -62,10 +56,10 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "a4561db4",
+    "git-widget-placeholder": "dev-Alberto",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/COMFENALCO/Documents/Comfenalco/OneDrive/Ing/EjercicioNominaEmpresa/Empresa-Gestion-Nomina",
+    "last_opened_file_path": "/home/saly/Programacion1/EjercicioNomina/Empresa-Gestion-Nomina/co.edu.uniquindio.EmpresaNomina",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -134,5 +128,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/co.edu.uniquindio.EmpresaNomina/target/classes/co/edu/uniquindio/EmpresaNomina/model/EmpleadoPlanta.class</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
