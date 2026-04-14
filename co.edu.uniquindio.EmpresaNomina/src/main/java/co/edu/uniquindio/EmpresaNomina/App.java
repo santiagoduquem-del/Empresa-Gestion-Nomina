@@ -1,139 +1,148 @@
 package co.edu.uniquindio.EmpresaNomina;
 
 import co.edu.uniquindio.EmpresaNomina.model.*;
-import java.util.Scanner;
+
+import javax.swing.*;
+
 
 public class App {
-    private static final Scanner scanner = new Scanner(System.in);
+
     private static final Empresa miEmpresa = new Empresa("Nómina Quindío", 123456789);
+    private static final Empleado empleadoTemporal1 = new EmpleadoTemporal("a","1", 1,1, Categoria.JUNIOR,1,1,1,1);
+    private static final Empleado empledoPlanta1 = new EmpleadoPlanta("a","1", 1,1, Categoria.JUNIOR,1,1,"1",1, 1,1);
+    private static final Empleado empledoVenta1 = new EmpleadoVenta("a","1", 1,1, Categoria.JUNIOR,1,1,1,1);
+
+
+
 
     public static void main(String[] args) {
-        int opcion;
+        //Empleados de prueba
+        EmpleadoPlanta e1 = new EmpleadoPlanta("Carlos Ruiz", "123", 35, 2500000f, Categoria.SENIOR, 0.04f, 0.04f, "Analista", 10, 15000f, 162000f);
 
-        do {
-            System.out.println("\n===== MENÚ GESTIÓN DE NÓMINA =====");
-            System.out.println("1. Agregar empleado de planta");
-            System.out.println("2. Agregar empleado de ventas");
-            System.out.println("3. Agregar empleado temporal");
-            System.out.println("4. Mostrar todos los empleados");
-            System.out.println("5. Buscar empleado por documento");
-            System.out.println("6. Mostrar empleado con mayor salario neto");
-            System.out.println("7. Mostrar nómina total de la empresa");
-            System.out.println("8. Mostrar resumen de pagos");
-            System.out.println("0. Salir");
-            System.out.print("Seleccione una opción: ");
-            
-            try {
-                opcion = Integer.parseInt(scanner.nextLine());
-                switch (opcion) {
-                    case 1 -> agregarEmpleadoPlanta();
-                    case 2 -> agregarEmpleadoVentas();
-                    case 3 -> agregarEmpleadoTemporal();
-                    case 4 -> miEmpresa.mostrarTodosLosEmpleados();
-                    case 5 -> buscarEmpleado();
-                    case 6 -> mostrarEmpleadoMayorSalario();
-                    case 7 -> System.out.println(">>> NÓMINA TOTAL: $" + miEmpresa.calcularNominaTotal());
-                    case 8 -> miEmpresa.mostrarResumenesPago();
-                    case 0 -> System.out.println("Saliendo del sistema...");
-                    default -> System.out.println("Opción no válida.");
+        EmpleadoTemporal t1 = new EmpleadoTemporal("Sofía Ramírez", "678", 25, 1800000f, Categoria.JUNIOR, 0.04f, 0.04f, 20, 60000f);
+
+        EmpleadoVenta v1 = new EmpleadoVenta("Pedro Sánchez", "223", 31, 1500000f, Categoria.SEMISENIOR, 0.04f, 0.04f, 5000000f, 0.05f);
+
+        miEmpresa.agregarEmpleado(e1);
+        miEmpresa.agregarEmpleado(t1);
+        miEmpresa.agregarEmpleado(v1);
+
+
+
+
+        String menu = "-----Menu Gestion De Nomina------ \n" +
+                "Marque alguna de estas opciones \n" +
+                "  \n" +
+                "  " +
+                "1. Ingresar Cambios \n" +
+                "2. Crear grupo \n" +
+                "3. Registrar Contacto\n" +
+                "4. Crear Reunion \n" +
+                "5 \n" +
+                "\n" +
+                "\n" +
+                "8. Salir de la agenda\n";
+
+        String menuModificar = "-----Menu Modificar------ \n" +
+                "Marque alguna de estas opciones \n" +
+                "  \n" +
+                "  " +
+                "1. Ingresar horas extra\n" +
+                "2. Modificar Descuento\n" +
+                "3. Buscar contactos del mismo nombre \n" +
+                "4. Buscar y mostra GrupoContacto  \n" +
+                "5 \n" +
+                "\n" +
+                "\n" +
+                "7. Salir de la agenda\n";
+
+
+        int opcion = 0;
+        int opcionBuscar=0;
+        String input = "";
+        String inputModificar = "";
+        int contError = 0;
+
+        while(opcion!=8){
+            input = JOptionPane.showInputDialog(menu);
+
+
+            if (input==null){
+
+                contError+=1;
+
+                if (contError>=3){
+                    JOptionPane.showMessageDialog(null, "Excedió el número de errores,  adios");
+                    break;
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Error: Por favor ingrese un número válido.");
-                opcion = -1;
-            } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
-                opcion = -1;
+                continue;
+
             }
-        } while (opcion != 0);
-    }
 
-    private static void agregarEmpleadoPlanta() {
-        try {
-            System.out.print("Nombre: "); String nombre = scanner.nextLine();
-            System.out.print("Documento: "); String doc = scanner.nextLine();
-            System.out.print("Edad: "); int edad = Integer.parseInt(scanner.nextLine());
-            System.out.print("Salario Base: "); float salario = Float.parseFloat(scanner.nextLine());
-            Categoria cat = solicitarCategoria();
-            System.out.print("% Descuento Salud: "); float salud = Float.parseFloat(scanner.nextLine());
-            System.out.print("% Descuento Pensión: "); float pension = Float.parseFloat(scanner.nextLine());
-            System.out.print("Cargo: "); String cargo = scanner.nextLine();
-            System.out.print("Horas Extra: "); int horas = Integer.parseInt(scanner.nextLine());
-            System.out.print("Valor Hora Extra: "); float valorHora = Float.parseFloat(scanner.nextLine());
-            System.out.print("Auxilio Transporte: "); float auxilio = Float.parseFloat(scanner.nextLine());
 
-            miEmpresa.agregarEmpleado(new EmpleadoPlanta(nombre, doc, edad, salario, cat, salud, pension, cargo, horas, valorHora, auxilio));
-            System.out.println("Empleado de planta agregado con éxito.");
-        } catch (Exception e) {
-            System.out.println("Error al agregar: " + e.getMessage());
+// Sirve para aislar un posible error al captar información sin tener que parar el ciclo
+            try{
+                opcion = Integer.parseInt(input);
+            } catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null,"Debe ingrear un número correspondiente a una opción");
+                continue;
+            }
+
+
+            switch (opcion){
+                case 1 : { inputModificar = JOptionPane.showInputDialog(menuModificar);
+
+                    try{
+                        opcionBuscar = Integer.parseInt(inputModificar);
+                    } catch (NumberFormatException e){
+                        JOptionPane.showMessageDialog(null,"Debe ingrear un número correspondiente a una opción");
+                        continue;
+                    }
+                    switch (opcionBuscar){
+                        case 1 : {
+                            continue;
+                        }
+                        case 2 : {
+                            continue;
+
+                        }
+
+                        case 3 : {
+                            continue;
+
+                        }
+
+                        case 4 : {
+
+                            continue;
+
+                        }
+
+                        case 7: continue;
+
+                        default: JOptionPane.showMessageDialog(null,"No marcó una opción valida");
+                            continue;
+
+                    }
+
+
+                }
+
+                case 2 : {
+                    continue;
+                }
+
+                case 3 : {
+                    continue;
+                }
+
+                case  8 : break;
+
+                default: break;
+
+            }
+            break;
         }
-    }
 
-    private static void agregarEmpleadoVentas() {
-        try {
-            System.out.print("Nombre: "); String nombre = scanner.nextLine();
-            System.out.print("Documento: "); String doc = scanner.nextLine();
-            System.out.print("Edad: "); int edad = Integer.parseInt(scanner.nextLine());
-            System.out.print("Salario Base: "); float salario = Float.parseFloat(scanner.nextLine());
-            Categoria cat = solicitarCategoria();
-            System.out.print("% Descuento Salud: "); float salud = Float.parseFloat(scanner.nextLine());
-            System.out.print("% Descuento Pensión: "); float pension = Float.parseFloat(scanner.nextLine());
-            System.out.print("Total Ventas: "); float ventas = Float.parseFloat(scanner.nextLine());
-            System.out.print("% Comisión: "); float comision = Float.parseFloat(scanner.nextLine());
-
-            miEmpresa.agregarEmpleado(new EmpleadoVenta(nombre, doc, edad, salario, cat, salud, pension, ventas, comision));
-            System.out.println("Empleado de ventas agregado con éxito.");
-        } catch (Exception e) {
-            System.out.println("Error al agregar: " + e.getMessage());
-        }
-    }
-
-    private static void agregarEmpleadoTemporal() {
-        try {
-            System.out.print("Nombre: "); String nombre = scanner.nextLine();
-            System.out.print("Documento: "); String doc = scanner.nextLine();
-            System.out.print("Edad: "); int edad = Integer.parseInt(scanner.nextLine());
-            System.out.print("Salario Base (para bonificación): "); float salario = Float.parseFloat(scanner.nextLine());
-            Categoria cat = solicitarCategoria();
-            System.out.print("% Descuento Salud: "); float salud = Float.parseFloat(scanner.nextLine());
-            System.out.print("% Descuento Pensión: "); float pension = Float.parseFloat(scanner.nextLine());
-            System.out.print("Días Trabajados: "); int dias = Integer.parseInt(scanner.nextLine());
-            System.out.print("Valor Día: "); float valorDia = Float.parseFloat(scanner.nextLine());
-
-            miEmpresa.agregarEmpleado(new EmpleadoTemporal(nombre, doc, edad, salario, cat, salud, pension, dias, valorDia));
-            System.out.println("Empleado temporal agregado con éxito.");
-        } catch (Exception e) {
-            System.out.println("Error al agregar: " + e.getMessage());
-        }
-    }
-
-    private static void buscarEmpleado() {
-        System.out.print("Ingrese el documento: ");
-        String doc = scanner.nextLine();
-        Empleado emp = miEmpresa.buscarEmpleado(doc);
-        if (emp != null) {
-            emp.mostrarInformacion();
-        } else {
-            System.out.println("Empleado no encontrado.");
-        }
-    }
-
-    private static void mostrarEmpleadoMayorSalario() {
-        Empleado mayor = miEmpresa.obtenerEmpleadoMayorSalario();
-        if (mayor != null) {
-            System.out.println("El empleado que más gana es: " + mayor.getNombre() + " ($" + mayor.calcularSalarioNeto() + ")");
-        } else {
-            System.out.println("No hay empleados registrados.");
-        }
-    }
-
-    private static Categoria solicitarCategoria() {
-        System.out.println("Categoría (1. JUNIOR, 2. SEMISENIOR, 3. SENIOR): ");
-        int catOp = Integer.parseInt(scanner.nextLine());
-        return switch (catOp) {
-            case 1 -> Categoria.JUNIOR;
-            case 2 -> Categoria.SEMISENIOR;
-            case 3 -> Categoria.SENIOR;
-            default -> null;
-        };
     }
 }
